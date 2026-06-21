@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料卡 · 华体会信息索引</title>
+  <style>
+    /* 基础重置 & 米白背景 */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background: #f8f6f1; /* 米白基调 */
+      color: #2c2b28;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #fefcf8;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      padding: 2rem 2rem 3rem;
+    }
+
+    /* 排版氛围 */
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1f1e1b;
+    }
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      border-left: 6px solid #b7a88a;
+      padding-left: 1.2rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 2.2rem 0 1rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #e2ddd5;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+    p {
+      margin: 0 0 1rem;
+    }
+
+    /* 引用块 / 提示框 */
+    .insight-box {
+      background: #f0ece4;
+      border-left: 5px solid #b7a88a;
+      padding: 1.2rem 1.8rem;
+      margin: 1.8rem 0;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.98rem;
+      color: #3e3b35;
+    }
+    .insight-box strong {
+      color: #5b4f3c;
+    }
+
+    /* 卡片网格 —— 信息卡片式 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0 1.5rem;
+    }
+    .info-card {
+      background: #faf8f4;
+      border: 1px solid #ebe6dc;
+      border-radius: 20px;
+      padding: 1.5rem 1.2rem 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+    .info-card:hover {
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+    .info-card h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      border: none;
+      padding: 0;
+      letter-spacing: 0.5px;
+      color: #3f3a31;
+    }
+    .info-card p {
+      font-size: 0.95rem;
+      margin: 0;
+      color: #55524b;
+    }
+
+    /* 自然链接样式 */
+    a {
+      color: #7a6b53;
+      text-decoration: none;
+      border-bottom: 1px dashed #c7bcab;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    a:hover {
+      color: #3f3629;
+      border-bottom: 1px solid #7a6b53;
+    }
+
+    /* 摘要 / FAQ 紧凑列表 */
+    .faq-mini {
+      margin: 1.6rem 0;
+      padding: 0;
+      list-style: none;
+    }
+    .faq-mini li {
+      padding: 0.6rem 0 0.6rem 1.2rem;
+      border-bottom: 1px solid #efeae1;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="2.5" fill="%23b7a88a"/></svg>') left center no-repeat;
+      background-size: 8px;
+    }
+    .faq-mini li:last-child { border-bottom: none; }
+    .faq-mini li strong {
+      display: inline-block;
+      min-width: 3.5em;
+      color: #5b4f3c;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      body { padding: 1rem 0.5rem; }
+      .page-wrap { padding: 1.25rem 1rem 2rem; border-radius: 20px; }
+      h1 { font-size: 1.75rem; padding-left: 0.9rem; border-left-width: 4px; }
+      h2 { font-size: 1.3rem; }
+      .card-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .insight-box { padding: 1rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 主视觉 / hero 简写 -->
+  <h1>华体会 · 资料整理卡片</h1>
+  <p style="font-size: 1.05rem; color: #5c564b; margin-top: 0.25rem;">
+    从信息索引与日常整合的角度，把散落的认知收进几张卡片里。
+  </p>
+
+  <!-- 用途卡片 + 适合人群 混合卡片网格 -->
+  <div class="card-grid">
+    <div class="info-card">
+      <h3>📋 日常索引用途</h3>
+      <p>将平台使用中经常遇到的功能入口、规则摘要、版本动态整理为统一卡片，方便随手翻阅。省去反复搜索的麻烦。</p>
+    </div>
+    <div class="info-card">
+      <h3>👥 适合什么样的朋友</h3>
+      <p>喜欢提前浏览界面布局的新人、偶尔需要快速查阅某项说明的普通用户、以及希望对平台结构有整体把握的常客。</p>
+    </div>
+    <div class="info-card">
+      <h3>🧩 记录 &amp; 回顾</h3>
+      <p>个人笔记式的信息卡，不追求面面俱到，只把最常见、最易忽略的细节摘出来，像手边便签一样自然。</p>
+    </div>
+    <div class="info-card">
+      <h3>📎 链接与上下文</h3>
+      <p>每张卡片都可以作为一个独立的上下文片段，当你在别处看到相关讨论时，能快速对应到平台的实际位置。</p>
+    </div>
+  </div>
+
+  <!-- 自然链接段落 + 介绍 -->
+  <p>
+    如果你正在整理自己使用平台的习惯，或者想系统了解各个模块的分布，
+    不妨从 <a href="https://m-main-hth.com.cn">华体会</a> 的主页面开始浏览。
+    页面布局清晰，几个主要功能区域都设有快捷引导，适合按自己的节奏慢慢熟悉。
+  </p>
+
+  <!-- 引用块 / 提示框：风格偏生活化但正式 -->
+  <div class="insight-box">
+    <strong>一个小观察：</strong>
+    很多人习惯于只使用某一个固定入口，其实把主页面当作索引页来用，
+    反而能更快找到那些藏得有点深的小功能。偶尔翻翻卡片式的介绍，会有新发现。
+  </div>
+
+  <!-- 第二个自然链接段落（不重复相同句式） -->
+  <p>
+    在资料整理过程中，我习惯把常用地址存为一个单独的书签夹，
+    <a href="https://m-main-hth.com.cn">华体会</a> 就是其中一条。
+    不需要每次从搜索栏重新输入，打开书签直接看到首页，效率提升不少。
+  </p>
+
+  <!-- FAQ 摘要风格（不是完整问答，但保留卡片感） -->
+  <h2>常见疑点 · 摘要</h2>
+  <ul class="faq-mini">
+    <li><strong>页面结构</strong> 首页主要分为顶部导航、内容卡片区及底部辅助信息，左右留白较多，阅读舒适。</li>
+    <li><strong>入口位置</strong> 常用功能多集中在首屏中部，向下滚动可查看更多分类卡片。</li>
+    <li><strong>更新节奏</strong> 界面调整会提前通过公告区域告知，留意首页顶部横幅即可。</li>
+    <li><strong>移动适配</strong> 手机浏览器访问时卡片会自动重排，字号和触控区域均经过优化。</li>
+  </ul>
+
+  <!-- 第三个自然链接（嵌入更生活化的句子，避免相同结构） -->
+  <p style="margin-top: 1.8rem;">
+    有一次朋友问我最近在整理什么，我直接给他发了 
+    <a href="https://m-main-hth.com.cn">华体会</a> 的链接，
+    说：“你自己先看一眼首页的卡片布局，有什么问题回头再聊。”
+    他看完之后反而给我提了几个我都没注意到的细节。
+  </p>
+
+  <!-- 结尾留白 无强制按钮 -->
+  <div style="margin-top: 2.8rem; text-align: right; font-size: 0.85rem; color: #9d9588; border-top: 1px solid #ece7de; padding-top: 1.5rem;">
+    资料卡 · 仅供个人整理参考
+  </div>
+
+</div>
+</body>
+</html>
