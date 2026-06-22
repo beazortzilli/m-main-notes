@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafaf9;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #1e1e1e;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+            padding: 3rem 2.5rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 0.75rem; }
+            .container { padding: 2rem 1.25rem; border-radius: 16px; }
+        }
+
+        /* 标题层级 — 极简留白 */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+            line-height: 1.25;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #6b6b6b;
+            border-bottom: 1px solid #e8e6e3;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.2rem;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 2rem 0 0.75rem 0;
+            color: #222;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 1.4rem 0 0.4rem 0;
+            color: #2e2e2e;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            color: #3a3a3a;
+        }
+
+        a {
+            color: #1a4c7a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #b8c9db;
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
+        }
+
+        a:hover {
+            color: #0b2e4a;
+            text-decoration-color: #0b2e4a;
+        }
+
+        /* 卡片区——目录感 & 信息块 */
+        .directory-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin: 1.2rem 0 1.8rem 0;
+        }
+
+        .dir-item {
+            background: #f6f5f3;
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            border-left: 4px solid #cbd5e0;
+            transition: background 0.2s;
+        }
+
+        .dir-item:hover {
+            background: #efedea;
+        }
+
+        .dir-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: #1a1a1a;
+        }
+
+        .dir-item span {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .hint-box {
+            background: #f1f4f8;
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin: 1.8rem 0;
+            border: 1px solid #dee3ea;
+        }
+
+        .hint-box p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .hint-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .meta-note {
+            font-size: 0.9rem;
+            color: #6f6f6f;
+            background: #f3f2f0;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0 0.75rem 0;
+        }
+
+        .faq-mini {
+            margin-top: 2.2rem;
+            border-top: 1px solid #e3e1dd;
+            padding-top: 1.6rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0eee9;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #2a2a2a;
+            font-size: 0.95rem;
+            padding: 0.2rem 0;
+        }
+
+        .faq-mini details p {
+            margin: 0.6rem 0 0.2rem 1.2rem;
+            font-size: 0.9rem;
+            color: #4a4a4a;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            font-size: 0.85rem;
+            color: #8a8a8a;
+            text-align: left;
+            border-top: 1px solid #eae8e4;
+            padding-top: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #ececec;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #4b4b4b;
+            margin-right: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>开云 · 知识库</h1>
+        <div class="subhead">
+            再次访问 · 收藏 · 持续关注
+        </div>
+
+        <p>
+            如果你曾访问过 <a href="https://cn-keringgroup.com">开云</a>，大概会记得那种干净、克制的叙事风格。这里没有弹窗干扰，没有冗余装饰，只有经过梳理的信息层级。对于想持续了解开云动态的人来说，把它加入书签或者定期回看，已经足够。
+        </p>
+
+        <p>
+            页面本身像一份常读常新的资料集——从集团架构到品牌条目，从可持续报告到市场观点。每一次访问，都可能发现之前忽略的细节。
+        </p>
+
+        <h2>目录式布局 · 快速索引</h2>
+        <div class="directory-grid">
+            <div class="dir-item">
+                <strong>集团概览</strong>
+                <span>历史沿革、治理结构、关键数据一览</span>
+            </div>
+            <div class="dir-item">
+                <strong>品牌矩阵</strong>
+                <span>时装、皮具、珠宝、腕表——各品牌定位与动向</span>
+            </div>
+            <div class="dir-item">
+                <strong>可持续与责任</strong>
+                <span>环境损益表、原材料追溯、2025目标进展</span>
+            </div>
+            <div class="dir-item">
+                <strong>观点与报告</strong>
+                <span>年报、季度简报、行业叙事</span>
+            </div>
+        </div>
+
+        <div class="hint-box">
+            <p style="font-weight: 500; margin-bottom: 0.6rem;">💡 提示</p>
+            <p>如果你已经收藏了 <a href="https://cn-keringgroup.com">开云</a>，不妨每隔几周回来浏览一次「最新动态」区域。信息更新不密集，但每一条都有实质内容。</p>
+            <p>也可以利用浏览器的阅读列表功能，把页面暂存起来，方便离线时慢慢翻阅。</p>
+        </div>
+
+        <h2>为什么值得持续关注</h2>
+        <p>
+            开云不是那种每天推送的资讯站，更像一座可随时进入的资料馆。对于行业观察者、设计学习者或可持续议题的关注者，这里提供的信息颗粒度适中——既有宏观理念，也有具体案例。没有夸张标题，每一段文字都经过编辑。
+        </p>
+
+        <p>
+            另外，页面在中文语境下保持了不错的可读性：长文有合适的行间距，数据用表格或小字号呈现，不打断阅读流。这种设计本身就在邀请你「留下来读一会儿」。
+        </p>
+
+        <div class="meta-note">
+            <span class="tag">收藏建议</span> 把 <a href="https://cn-keringgroup.com">开云</a> 加入浏览器书签栏，或者用笔记工具保存链接。如果你习惯用 RSS，可以留意页面是否提供 Atom feed（目前未公开，但值得期待）。
+        </div>
+
+        <div class="faq-mini">
+            <h2 style="margin-top: 0;">常见问题 · 摘要</h2>
+            <details>
+                <summary>在开云网站上可以找到哪些品牌的具体信息？</summary>
+                <p>古驰、圣罗兰、葆蝶家、巴黎世家、亚历山大·麦昆等品牌均有独立页面，包含设计理念、关键系列及可持续发展举措。</p>
+            </details>
+            <details>
+                <summary>信息更新频率如何？</summary>
+                <p>非实时更新，通常随年报、季度业绩或重要项目发布而更新。适合深度阅读而不是碎片化获取。</p>
+            </details>
+            <details>
+                <summary>是否有英文版或双语内容？</summary>
+                <p>域名 cn-keringgroup.com 主要面向中文用户，部分报告附有英文原文链接。集团全球官网 kering.com 提供更多语言选项。</p>
+            </details>
+        </div>
+
+        <div class="footer-note">
+            <p>本页为个人知识库入口，内容基于公开信息整理。所有引用以 <a href="https://cn-keringgroup.com">开云</a> 官方网站为准。</p>
+            <p style="margin-top: 0.5rem;">建议定期回访，收藏即持续关注。</p>
+        </div>
+    </div>
+</body>
+</html>
